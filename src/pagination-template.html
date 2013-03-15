@@ -1,0 +1,19 @@
+<div class="ng-ui-pagination pagination">
+  <ul>
+    <li ng-show="showPreviousPage" ng-click="setPage(currentPage - 1)" ng-class="{disabled: onFirstPage}">
+      <a>&laquo;</a>
+    </li>
+    <li ng-show="showFirstPage" ng-click="setPage(0)" ng-class="{active: onFirstPage}">
+      <a>&laquo; First</a>
+    </li>
+    <li ng-repeat="page in visiblePages" ng-click="setPage(page.index)" ng-class="{disabled: !page.clickable, active: page.active}">
+      <a>{{page.text}}</a>
+    </li>
+    <li ng-show="showLastPage" ng-click="setPage(maxPages)" ng-class="{active: onLastPage}">
+      <a>Last &raquo;</a>
+    </li>
+    <li ng-show="showNextPage" ng-click="setPage(currentPage + 1)" ng-class="{disabled: onLastPage}">
+      <a>&raquo;</a>
+    </li>
+  </ul>
+</div>
